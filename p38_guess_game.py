@@ -1,9 +1,19 @@
 def check_guess(guess, answer):
     global score
     # This line says the score variable is aglobalvariable. Itensuresthat changes to the variable can be seen throughout the whole program.
-    if guess == answer:
-        print('Correct answer')
-        score = score + 1
+    still_guessing = True
+    attempt = 0
+    while still_guessing and attempt < 3:
+        if guess.lower() == answer.lower():  # 不区分大小写
+            print('Correct answer.')
+            score = score + 1
+            still_guessing = False
+        else:
+            if attempt < 2:
+                guess = input("Sorry wrong answer.Try again.")
+            attempt = attempt+1
+    if attempt == 3:
+        print("The correct answer is "+answer+".")
 
 
 score = 0
@@ -14,3 +24,4 @@ guess2 = input('Which is the fastest land animal? ')
 check_guess(guess2, 'cheetah')
 guess3 = input('Which is the largest animal? ')
 check_guess(guess3, 'blue whale')
+print('Your score is ' + str(score)+".")
