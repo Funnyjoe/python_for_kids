@@ -20,3 +20,7 @@ guess = input('Which one of these is a fish? \n \
 A) Whale\n B) Dolphin\n C) Shark\n D) Squid \nType A, B, C, or D \n')
 check_guess(guess, 'C')
 print('Your score is ' + str(score)+".")
+
+
+# Use a backslash character(\) if you need to split a long line of code over two lines.
+# You can use \n to make a new line anywhere.
